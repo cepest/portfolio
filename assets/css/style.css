@@ -730,6 +730,9 @@ main section {
   }
 } */
 @media (max-width: 768px) {
+  .about .content .bio-row {
+    display: flex;
+  }
   .about .content ul i {
     font-size: 12px;
     /* line-height: 15px; */
