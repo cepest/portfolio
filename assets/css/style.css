@@ -730,9 +730,11 @@ main section {
   }
 } */
 @media (max-width: 768px) {
-  .bio-items {
-    display: inline;
-  }
+  .bio-row {
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
   .about .content ul i {
     font-size: 12px;
     /* line-height: 15px; */
