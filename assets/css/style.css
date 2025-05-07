@@ -133,7 +133,7 @@ li{
 }
 
 /*  */
-/*----# Back to top button------*/
+/*----# Back to top button----*/
 .back-to-top {
   z-index: 996;
   position: fixed;
@@ -205,9 +205,7 @@ li{
     background: var(--scroll-thumb-hover-color);
 }
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
+/*------# Header-------*/
 #header {
   position: fixed;
   top: 0;
@@ -309,9 +307,7 @@ li{
 
 }
   
-  /*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
+  /*-------# Navigation Menu---------*/
 /* Desktop Navigation */
 .nav-menu {
   padding: 30px 0 0 0;
@@ -395,7 +391,7 @@ li{
   }
 }
 
-/*-----# Hero Section-----*/
+/*--------# Hero Section--------*/
 #hero{
   width: 100%;
   height: 100vh;
@@ -472,7 +468,7 @@ li{
   }
 }
   
-/*-----# Sections General-----*/
+/*------# Sections General-------*/
 .flex-center{
     display: flex;
     justify-content: center;
@@ -618,15 +614,10 @@ main section {
 
 /*-----# About-----*/
 .about img{
-  margin: 2em;
-  width: 80%;
+  margin: 0 3em ;
+  width: 250px;
   padding-bottom: 2em;
 }
-/* .about .content h3 {
-  font-weight: 700;
-  font-size: 26px;
-  color: #173b6c;
-} */
 .about .content .bio-row{
   display: flex;
   align-items: center;
@@ -635,7 +626,7 @@ main section {
 }
 .about .content ul {
   list-style: none;
-  padding: 0 50px 0 0;
+  padding: 0 50px 0;
 }
 .about .content ul li {
   margin-bottom: 10px;
@@ -716,37 +707,16 @@ main section {
 .facts .count-box:hover i{
   color: var(--icon-hover-color);
 }
-/* @media (min-width: 1224px) {
-  #hero .container {
-    padding: 0 100px 0 400px;
-  }
-  #hero .container {
-    width: 90%;
-  }
-}
-@media (min-width: 1024px) {
-  #hero .container {
-    padding: 0 50px 0 400px;
-  }
-} */
 @media (max-width: 768px) {
-  .bio-row {
+  .about-content, .bio-row, .facts-row{
     display: flex;
     flex-direction: column;
-    /* gap: 20px; */
-}
-  .about .content ul i {
-    font-size: 12px;
-    /* line-height: 15px; */
-  }
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
   }
 }
 
-/*-----# Skills------*/
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
 .skills .container .content{
   width: 100%;
 }
@@ -891,9 +861,17 @@ main section {
 .edu-list .item:hover, .bar:hover, .experience-card:hover{
   transform: scale(1.03);
 }
+@media (max-width: 768px) {
+  .skills-info{
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 
-/*-----# Resume-----*/
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
 .resume .container .content{
   width: 100%;
 }
@@ -963,8 +941,17 @@ main section {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .resume .details, .resume-info{
+    display: flex;
+    flex-direction: column;
+  }
+}
 
-/*-----# Services Section-----*/
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
 .services .container .content{
   width: 100%;
 }
@@ -1091,7 +1078,9 @@ main section {
     color: var(--second-color);
 }
 
-/*-----# Portfolio-----*/
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
 .portfolio .container .content{
   width: 100%;
 }
@@ -1333,7 +1322,11 @@ main section {
   background: var(--btn-bg-color);
 }
 
-/*----# Portfolio Details-----*/
+
+
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
 /* .portfolio-details {
   padding-top: 40px;
 }
@@ -1386,7 +1379,10 @@ main section {
 }
  */
 
-/*----# Get in touch-----*/
+
+/*--------------------------------------------------------------
+# Get in touch
+--------------------------------------------------------------*/
 .get-in-touch .container .content{
   width: 100%;
 }
@@ -1423,9 +1419,32 @@ main section {
 .contact-card .contact-btn .btn{
   width: 175px;
 }
+@media (max-width: 768px) {
+.get-in-touch .content .contact-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-card .title h4{
+  font-size: 0.8em;    
+  }
+  .contact-card .title h3{
+  font-size: 1.5em;    
+  }
+  .contact-card .title h2{
+  font-size: 2.8em;    
+  }
+  .contact-card .contact-btn a{
+  font-size: .8em;    
+  }
+  .contact-card .contact-btn .btn{
+    width: 150px;
+  }
+}
 
 
-/*----# Testimonials-----*/
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
 .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
   overflow: hidden;
@@ -1515,7 +1534,7 @@ main section {
 }
 .contact .align-items-stretch{
     width: 48%;
-    height: 580px;
+    /* height: 580px; */
 }
 .contact .info {
     padding: 30px;
@@ -1593,8 +1612,10 @@ padding-left: 10px  ;
 }
 .contact iframe{
     max-width: 100%;
-    height: 310px;
+    /* height: 100%; */
     border-radius: 8px;
+    /* flex: 1;
+    overflow-y: auto; */
 }
 .contact-right p{
     color: var(--third-color);
@@ -1623,6 +1644,7 @@ padding-left: 10px  ;
 }
 .contact .php-email-form textarea {
     padding: 10px;
+    height: 320px;
 }
 .contact .php-email-form .validate {
     display: none;
@@ -1682,6 +1704,21 @@ padding-left: 10px  ;
       transform: rotate(360deg);
     }
 }
+@media (max-width: 768px) {
+  .contact {
+    padding-bottom: 10px;
+  }
+  .contact .align-items-stretch{
+      width: 100%;
+      /* height: 580px; */
+      margin-bottom: 20px;
+  }
+  .contact .content, .contact .content .rows {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 
 /*==Footer==*/
 /* footer{
@@ -1702,7 +1739,9 @@ padding-left: 10px  ;
     max-width: 1150px;
 } */
 
-/*---# Breadcrumbs---*/
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
 .breadcrumbs {
   padding: 20px 0;
   background: #f9f9f9;
@@ -1742,7 +1781,9 @@ padding-left: 10px  ;
   }
 }
 
-/*---# Footer---*/
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
 #footer {
   padding: 15px;
   color: #f4f6fd;
