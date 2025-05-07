@@ -730,7 +730,7 @@ main section {
   }
 } */
 @media (max-width: 768px) {
-  .about .content .bio-row {
+  .bio-row {
     display: flex;
   }
   .about .content ul i {
