@@ -731,7 +731,7 @@ main section {
 } */
 @media (max-width: 768px) {
   .bio-items {
-    display: flex;
+    display: inline;
   }
   .about .content ul i {
     font-size: 12px;
