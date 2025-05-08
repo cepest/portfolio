@@ -1358,12 +1358,49 @@ main section {
 .swiper-pagination-bullet.swiper-pagination-bullet-active{
   background: var(--btn-bg-color);
 }
-/* @media (max-width: 768px) {
-  .portfolio-modal-body{
-    max-width: 600px;
-    padding: 15px;
+@media (max-width: 768px) {
+  .portfolio-modal-body {
+    max-width: 400px;
+    padding: 30px;
+    margin: 15px;
   }
-} */
+  .portfolio-modal-body .swiper-btn{
+    font-size: 1.2em;
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-modal-body {
+    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+  }
+  .portfolio-modal-body .swiper-btn{
+    font-size: 1em;
+    padding: 0 0 20px;
+  }
+  .portfolio-modal-body p{
+    font-size: .8em;
+  }
+  .portfolio-modal-body img {
+    height: auto;
+    max-height: 200px;
+    margin: 10px 0 30px;
+  }
+  .portfolio-close-btn {
+    margin: 10px;
+  }
+  .portfolio-modal-body .card-title h3 {
+    font-size: 1.2em;
+  }
+  .portfolio-modal-body .card-title i {
+    width: 35px;
+    height: 35px;
+    font-size: 1em;
+  }
+}
+
 
 /*--------# Portfolio Details--------*/
 /* .portfolio-details {
