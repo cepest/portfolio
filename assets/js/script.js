@@ -69,6 +69,29 @@
     onscroll(document, toggleBacktotop)
   }
 
+  //** Mobile nav toggle **//
+  // on('click', '.mobile-nav-toggle', function(e) {
+  //   select('body').classList.toggle('mobile-nav-active')
+  //   this.classList.toggle('bi-list')
+  //   this.classList.toggle('bi-x')
+  // });
+
+  /* Scrool with ofset on links with a class name .scrollto */
+  // on('click', '.scrollto', function(e) {
+  //   if (select(this.hash)) {
+  //     e.preventDefault()
+
+  //     let body = select('body')
+  //     if (body.classList.contains('mobile-nav-active')) {
+  //       body.classList.remove('mobile-nav-active')
+  //       // let navbarToggle = select('.mobile-nav-toggle')
+  //       // navbarToggle.classList.toggle('bi-list')
+  //       // navbarToggle.classList.toggle('bi-x')
+  //     }
+  //     scrollto(this.hash)
+  //   }
+  // }, true);
+
   /* Scroll with ofset on page load with hash links in the url */
   window.addEventListener('load', () => {
     if (window.location.hash) {
@@ -121,22 +144,41 @@
   new PureCounter();  
 })()
 
+// //Services section - Modal
+// const serviceModals = document.querySelectorAll(".service-modal");
+// const learnmoreBtns = document.querySelectorAll(".learn-more-btn");
+// const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+// var modal = function(modalClick){
+//     serviceModals[modalClick].classList.add("active");
+// }
+// learnmoreBtns.forEach((learnmoreBtn, i) => {
+//     learnmoreBtn.addEventListener("click", () => {
+//         modal(i)
+//     });
+// });
+// modalCloseBtns.forEach((modalCloseBtn) => {
+//     modalCloseBtn.addEventListener("click", () => {
+//         serviceModals.forEach((modalView) => {
+//             modalView.classList.remove("active");
+//         });
+//     });
+// });
+
 // Services section - Modal
 const serviceModals = document.querySelectorAll(".service-modal");
 const learnmoreBtns = document.querySelectorAll(".learn-more-btn");
 const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
 // Function to open modal
 var modal = function(modalClick){
     serviceModals[modalClick].classList.add("active");
 }
-// Open modal on button click
 learnmoreBtns.forEach((learnmoreBtn, i) => {
     learnmoreBtn.addEventListener("click", (e) => {
         e.stopPropagation(); // stop event bubbling so it doesn't trigger document click
         modal(i)
     });
 });
-// Close modal on close button click
 modalCloseBtns.forEach((modalCloseBtn) => {
     modalCloseBtn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -145,7 +187,6 @@ modalCloseBtns.forEach((modalCloseBtn) => {
         });
     });
 });
-// Close modal when clicking outside
 serviceModals.forEach((modalView) => {
   modalView.addEventListener("click", (event) => {
     if (event.target === modalView) {
@@ -304,6 +345,55 @@ window.addEventListener("scroll", () => {
     });
 });
 
+// //Responsive navigation menu toggle
+// const menuBtn = document.querySelector(".nav-menu-btn");
+// const closeBtn = document.querySelector(".closebtn");
+// const navigation = document.querySelector(".navigation");
+// const navItems = document.querySelectorAll(".nav-items a");
+
+// menuBtn.addEventListener("click", () => {
+//     navigation.classList.add("active");
+//     closeBtn.classList.add("active");
+// });
+// navItems.forEach((navItem) => {
+//     navItem.addEventListener("click", () => {
+//         navigation.classList.remove("active");
+//     });
+// });
+// closeBtn.addEventListener("click", () => {
+//     navigation.classList.remove("active");
+// });
+
+
+
+//Scroll reveal animations
+ScrollReveal({
+    //reset: true,
+    distance: '60px',
+    duration: 2500,
+    delay: 100
+});
+// 
+
+// //Navigation bar effects on scroll
+// window.addEventListener("scroll", function(){
+//     const header = document.querySelector("header");
+//     header.classList.toggle("sticky", window.scrollY > 0);
+// });
+
+// // Target elements, and specify options to create reveal animations
+// ScrollReveal().reveal('.home .info h2, .section-title-01, .section-title-02', { delay: 50, origina: 'left' });
+// ScrollReveal().reveal('.home .info h3 .home .info p, .about-inf btn', { delay: 100, origina: 'right' });
+// ScrollReveal().reveal('.home .info btn', { delay: 100, origina: 'bottom' });
+// ScrollReveal().reveal('.media-icons i, .contact-left li', { delay: 100, origina: 'left', interval: 50 });
+// ScrollReveal().reveal('.home-img, .about-img', { delay: 100, origina: 'bottom' });
+// ScrollReveal().reveal('.about .description, .contact-right', { delay: 200, origina: 'right' });
+// ScrollReveal().reveal('.about .professional-list li', { delay: 100, origina: 'right', interval: 50 });
+// ScrollReveal().reveal('.skills-description, .service-description, .contact-card, .client-swiper, .contact-left h2', { delay: 200, origina: 'left' });
+// ScrollReveal().reveal('.experience-card, .service-card, .education, .portfolio .img-card', { delay: 200, origina: 'bottom', interval: 50 });
+// ScrollReveal().reveal('footer .group', { delay: 200, origina: 'top', interval: 100 });
+
+
 const menuBtn = document.querySelector(".menu-btn");
 const closeBtn = document.querySelector(".closebtn");
 const header = document.getElementById("header");
@@ -323,6 +413,7 @@ navLinks.forEach(link => {
     menuBtn.style.display = "flex";
   });
 });
+
 document.addEventListener("click", (event) => {
   if (
     header.classList.contains("active") &&
@@ -334,29 +425,3 @@ document.addEventListener("click", (event) => {
   }
 });
 
-//Scroll reveal animations
-ScrollReveal({
-    //reset: true,
-    distance: '60px',
-    duration: 2500,
-    delay: 100
-});
-// 
-
-//Navigation bar effects on scroll
-window.addEventListener("scroll", function(){
-    const header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 0);
-});
-
-// // Target elements, and specify options to create reveal animations
-// ScrollReveal().reveal('.home .info h2, .section-title-01, .section-title-02', { delay: 50, origina: 'left' });
-// ScrollReveal().reveal('.home .info h3 .home .info p, .about-inf btn', { delay: 100, origina: 'right' });
-// ScrollReveal().reveal('.home .info btn', { delay: 100, origina: 'bottom' });
-// ScrollReveal().reveal('.media-icons i, .contact-left li', { delay: 100, origina: 'left', interval: 50 });
-// ScrollReveal().reveal('.home-img, .about-img', { delay: 100, origina: 'bottom' });
-// ScrollReveal().reveal('.about .description, .contact-right', { delay: 200, origina: 'right' });
-// ScrollReveal().reveal('.about .professional-list li', { delay: 100, origina: 'right', interval: 50 });
-// ScrollReveal().reveal('.skills-description, .service-description, .contact-card, .client-swiper, .contact-left h2', { delay: 200, origina: 'left' });
-// ScrollReveal().reveal('.experience-card, .service-card, .education, .portfolio .img-card', { delay: 200, origina: 'bottom', interval: 50 });
-// ScrollReveal().reveal('footer .group', { delay: 200, origina: 'top', interval: 100 });
