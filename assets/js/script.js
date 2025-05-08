@@ -28,7 +28,7 @@
     el.addEventListener('scroll', listener)
   }
 
-  /** Navbar links active state on scroll */
+  //** Navbar links active state on scroll *//
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
@@ -46,7 +46,7 @@
   window.addEventListener('load', navbarlinksActive)
   onscroll(document, navbarlinksActive)
 
-  /** Scrolls to an element with header offset */
+  //** Scrolls to an element with header offset *//
   const scrollto = (el) => {
     let elementPos = select(el).offsetTop
     window.scrollTo({
@@ -55,7 +55,7 @@
     })
   }
 
-  /** Back to top button */
+  //** Display Back to top button *//
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
@@ -69,32 +69,28 @@
     onscroll(document, toggleBacktotop)
   }
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('body').classList.toggle('mobile-nav-active')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  });
+  //** Mobile nav toggle **//
+  // on('click', '.mobile-nav-toggle', function(e) {
+  //   select('body').classList.toggle('mobile-nav-active')
+  //   this.classList.toggle('bi-list')
+  //   this.classList.toggle('bi-x')
+  // });
 
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
+  /* Scrool with ofset on links with a class name .scrollto */
+  // on('click', '.scrollto', function(e) {
+  //   if (select(this.hash)) {
+  //     e.preventDefault()
 
-      let body = select('body')
-      if (body.classList.contains('mobile-nav-active')) {
-        body.classList.remove('mobile-nav-active')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true);
+  //     let body = select('body')
+  //     if (body.classList.contains('mobile-nav-active')) {
+  //       body.classList.remove('mobile-nav-active')
+  //       // let navbarToggle = select('.mobile-nav-toggle')
+  //       // navbarToggle.classList.toggle('bi-list')
+  //       // navbarToggle.classList.toggle('bi-x')
+  //     }
+  //     scrollto(this.hash)
+  //   }
+  // }, true);
 
   /* Scroll with ofset on page load with hash links in the url */
   window.addEventListener('load', () => {
@@ -145,29 +141,64 @@
   });
 
   /* Initiate Pure Counter */
-  new PureCounter();
-  
-  
+  new PureCounter();  
 })()
 
-//Services section - Modal
+// //Services section - Modal
+// const serviceModals = document.querySelectorAll(".service-modal");
+// const learnmoreBtns = document.querySelectorAll(".learn-more-btn");
+// const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+// var modal = function(modalClick){
+//     serviceModals[modalClick].classList.add("active");
+// }
+// learnmoreBtns.forEach((learnmoreBtn, i) => {
+//     learnmoreBtn.addEventListener("click", () => {
+//         modal(i)
+//     });
+// });
+// modalCloseBtns.forEach((modalCloseBtn) => {
+//     modalCloseBtn.addEventListener("click", () => {
+//         serviceModals.forEach((modalView) => {
+//             modalView.classList.remove("active");
+//         });
+//     });
+// });
+
+// Services section - Modal
 const serviceModals = document.querySelectorAll(".service-modal");
 const learnmoreBtns = document.querySelectorAll(".learn-more-btn");
 const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+// Function to open modal
 var modal = function(modalClick){
     serviceModals[modalClick].classList.add("active");
 }
+
+// Open modal on button click
 learnmoreBtns.forEach((learnmoreBtn, i) => {
-    learnmoreBtn.addEventListener("click", () => {
+    learnmoreBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // stop event bubbling so it doesn't trigger document click
         modal(i)
     });
 });
+
+// Close modal on close button click
 modalCloseBtns.forEach((modalCloseBtn) => {
-    modalCloseBtn.addEventListener("click", () => {
+    modalCloseBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
         serviceModals.forEach((modalView) => {
             modalView.classList.remove("active");
         });
     });
+});
+
+// Close modal when clicking outside
+serviceModals.forEach((modalView) => {
+  modalView.addEventListener("click", (event) => {
+    if (event.target === modalView) {
+      modalView.classList.remove("active");
+    }
+  });
 });
 
 // Portfolio Tab Filter
@@ -195,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Portfolio section - Modal
-const portfolioModals = document.querySelectorAll(".portfolio-model");
+const portfolioModals = document.querySelectorAll(".portfolio-modal");
 const imgCards = document.querySelectorAll(".img-card");
 const portfolioCloseBtns = document.querySelectorAll(".portfolio-close-btn");
 var portfolioModal = function(modalClick){
@@ -313,26 +344,28 @@ window.addEventListener("scroll", () => {
     });
 });
 
-//Responsive navigation menu toggle
-const menuBtn = document.querySelector(".nav-menu-btn");
-const closeBtn = document.querySelector(".nav-close-btn");
-const navigation = document.querySelector(".navigation");
-const navItems = document.querySelectorAll(".nav-items a");
-menuBtn.addEventListener("click", () => {
-    navigation.classList.add("active");
-});
-closeBtn.addEventListener("click", () => {
-    navigation.classList.remove("active");
-});
-navItems.forEach((navItem) => {
-    navItem.addEventListener("click", () => {
-        navigation.classList.remove("active");
-    });
-});
+// //Responsive navigation menu toggle
+// const menuBtn = document.querySelector(".nav-menu-btn");
+// const closeBtn = document.querySelector(".closebtn");
+// const navigation = document.querySelector(".navigation");
+// const navItems = document.querySelectorAll(".nav-items a");
+
+// menuBtn.addEventListener("click", () => {
+//     navigation.classList.add("active");
+//     closeBtn.classList.add("active");
+// });
+// navItems.forEach((navItem) => {
+//     navItem.addEventListener("click", () => {
+//         navigation.classList.remove("active");
+//     });
+// });
+// closeBtn.addEventListener("click", () => {
+//     navigation.classList.remove("active");
+// });
+
+
 
 //Scroll reveal animations
-
-//Common reveal options to create reveal animations
 ScrollReveal({
     //reset: true,
     distance: '60px',
@@ -359,19 +392,35 @@ ScrollReveal({
 // ScrollReveal().reveal('.experience-card, .service-card, .education, .portfolio .img-card', { delay: 200, origina: 'bottom', interval: 50 });
 // ScrollReveal().reveal('footer .group', { delay: 200, origina: 'top', interval: 100 });
 
-// Function to calculate age
-function calculateAge(birthdate) {
-  const today = new Date();
-  const birthDate = new Date(birthdate);
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-  }
-  return age;
-}
 
-// Set the birthdate here (YYYY-MM-DD)
-const birthdate = '1991-02-13'; // Your birthdate
-// Display the age
-document.getElementById('age').innerText = calculateAge(birthdate);
+const menuBtn = document.querySelector(".menu-btn");
+const closeBtn = document.querySelector(".closebtn");
+const header = document.getElementById("header");
+const navLinks = document.querySelectorAll(".nav-link");
+
+menuBtn.addEventListener("click", () => {
+  header.classList.add("active");
+  menuBtn.style.display = "none";
+});
+closeBtn.addEventListener("click", () => {
+  header.classList.remove("active");
+  menuBtn.style.display = "flex";
+});
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    header.classList.remove("active");
+    menuBtn.style.display = "flex";
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (
+    header.classList.contains("active") &&
+    !header.contains(event.target) &&
+    !menuBtn.contains(event.target)
+  ) {
+    header.classList.remove("active");
+    menuBtn.style.display = "flex";
+  }
+});
+
