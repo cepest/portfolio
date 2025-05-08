@@ -1271,7 +1271,7 @@ main section {
   bottom: 0;
 }
 /*  */
-.portfolio-model{
+.portfolio-modal{
   z-index: 999999;
   position: fixed;
   width: 100%;
@@ -1287,11 +1287,11 @@ main section {
   align-items: center;
   justify-content: center;
 }
-.portfolio-model.active{
+.portfolio-modal.active{
   visibility: visible;
   opacity: 1;
 }
-.portfolio-model-body{
+.portfolio-modal-body{
   position: relative;
   background: var(--modal-bg-color);
   max-width: 600px;
@@ -1302,7 +1302,7 @@ main section {
   transform: translateY(-50px);
   transition:.5s ease;
 }
-.portfolio-model.active .portfolio-model-body{
+.portfolio-modal.active .portfolio-modal-body{
   transform: translateY(0);
 }
 .portfolio-close-btn{
@@ -1317,13 +1317,13 @@ main section {
   color: var(--body-bg-color);
   font-weight: 600;
 }
-.portfolio-model-body .card-title{
+.portfolio-modal-body .card-title{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 60px;
 }
-.portfolio-model-body .card-title i{
+.portfolio-modal-body .card-title i{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1335,13 +1335,13 @@ main section {
   color: var(--btn-text-color);
   background: var(--btn-bg-color);
 }
-.portfolio-model-body .card-title i:hover{
+.portfolio-modal-body .card-title i:hover{
   background: var(--btn-hover-color);
 }
-.portfolio-model-body .card-title h3{
+.portfolio-modal-body .card-title h3{
   font-size: 1.5em;
 }
-.portfolio-model-body img{
+.portfolio-modal-body img{
   width: 100%;
   height: 250px;
   margin: 10px 0 40px;
