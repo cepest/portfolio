@@ -69,29 +69,6 @@
     onscroll(document, toggleBacktotop)
   }
 
-  //** Mobile nav toggle **//
-  // on('click', '.mobile-nav-toggle', function(e) {
-  //   select('body').classList.toggle('mobile-nav-active')
-  //   this.classList.toggle('bi-list')
-  //   this.classList.toggle('bi-x')
-  // });
-
-  /* Scrool with ofset on links with a class name .scrollto */
-  // on('click', '.scrollto', function(e) {
-  //   if (select(this.hash)) {
-  //     e.preventDefault()
-
-  //     let body = select('body')
-  //     if (body.classList.contains('mobile-nav-active')) {
-  //       body.classList.remove('mobile-nav-active')
-  //       // let navbarToggle = select('.mobile-nav-toggle')
-  //       // navbarToggle.classList.toggle('bi-list')
-  //       // navbarToggle.classList.toggle('bi-x')
-  //     }
-  //     scrollto(this.hash)
-  //   }
-  // }, true);
-
   /* Scroll with ofset on page load with hash links in the url */
   window.addEventListener('load', () => {
     if (window.location.hash) {
@@ -266,7 +243,7 @@ new Swiper('.portfolio-details-slider', {
   }
 });
 
-//portfolio data - Swiper
+// portfolio data - Swiper
 var swiper = new Swiper(".portfolio-data-swiper", {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -280,8 +257,6 @@ var swiper = new Swiper(".portfolio-data-swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-
-
 
 /* Testimonials slider */
 new Swiper('.testimonials-slider', {
@@ -345,26 +320,35 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// //Responsive navigation menu toggle
-// const menuBtn = document.querySelector(".nav-menu-btn");
-// const closeBtn = document.querySelector(".closebtn");
-// const navigation = document.querySelector(".navigation");
-// const navItems = document.querySelectorAll(".nav-items a");
-
-// menuBtn.addEventListener("click", () => {
-//     navigation.classList.add("active");
-//     closeBtn.classList.add("active");
-// });
-// navItems.forEach((navItem) => {
-//     navItem.addEventListener("click", () => {
-//         navigation.classList.remove("active");
-//     });
-// });
-// closeBtn.addEventListener("click", () => {
-//     navigation.classList.remove("active");
-// });
-
-
+//Close Modal
+const menuBtn = document.querySelector(".menu-btn");
+const closeBtn = document.querySelector(".closebtn");
+const header = document.getElementById("header");
+const navLinks = document.querySelectorAll(".nav-link");
+menuBtn.addEventListener("click", () => {
+  header.classList.add("active");
+  menuBtn.style.display = "none";
+});
+closeBtn.addEventListener("click", () => {
+  header.classList.remove("active");
+  menuBtn.style.display = "flex";
+});
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    header.classList.remove("active");
+    menuBtn.style.display = "flex";
+  });
+});
+document.addEventListener("click", (event) => {
+  if (
+    header.classList.contains("active") &&
+    !header.contains(event.target) &&
+    !menuBtn.contains(event.target)
+  ) {
+    header.classList.remove("active");
+    menuBtn.style.display = "flex";
+  }
+});
 
 //Scroll reveal animations
 ScrollReveal({
@@ -373,7 +357,6 @@ ScrollReveal({
     duration: 2500,
     delay: 100
 });
-// 
 
 // //Navigation bar effects on scroll
 // window.addEventListener("scroll", function(){
@@ -393,35 +376,4 @@ ScrollReveal({
 // ScrollReveal().reveal('.experience-card, .service-card, .education, .portfolio .img-card', { delay: 200, origina: 'bottom', interval: 50 });
 // ScrollReveal().reveal('footer .group', { delay: 200, origina: 'top', interval: 100 });
 
-
-const menuBtn = document.querySelector(".menu-btn");
-const closeBtn = document.querySelector(".closebtn");
-const header = document.getElementById("header");
-const navLinks = document.querySelectorAll(".nav-link");
-
-menuBtn.addEventListener("click", () => {
-  header.classList.add("active");
-  menuBtn.style.display = "none";
-});
-closeBtn.addEventListener("click", () => {
-  header.classList.remove("active");
-  menuBtn.style.display = "flex";
-});
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    header.classList.remove("active");
-    menuBtn.style.display = "flex";
-  });
-});
-
-document.addEventListener("click", (event) => {
-  if (
-    header.classList.contains("active") &&
-    !header.contains(event.target) &&
-    !menuBtn.contains(event.target)
-  ) {
-    header.classList.remove("active");
-    menuBtn.style.display = "flex";
-  }
-});
 
