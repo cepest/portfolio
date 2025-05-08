@@ -228,6 +228,7 @@ li{
   backdrop-filter: blur(20px);
   box-shadow: var(--box-shadow);
   cursor: pointer;
+  caret-color: transparent;
 }
 .theme-btn .fa-sun, .theme-btn.sun .fa-moon{
     display: none;
@@ -437,6 +438,7 @@ li{
   background: url("../images/background.jpg") top center;
   background-size: cover;
   /* background-attachment: fixed; */
+  caret-color: transparent;
 }
 #hero:before{
   content: "";
@@ -652,6 +654,9 @@ main section {
 }
 
 /*-----# About-----*/
+#about{
+  caret-color: transparent;
+}
 .about img{
   margin: 0 3em ;
   width: 250px;
@@ -754,6 +759,9 @@ main section {
 }
 
 /*-------# Skills------*/
+#skill{
+  caret-color: transparent;
+}
 .skills .container .content{
   width: 100%;
 }
@@ -906,9 +914,10 @@ main section {
 }
 
 
-/*--------------------------------------------------------------
-# Resume
---------------------------------------------------------------*/
+/*--------# Resume-------*/
+#resume{
+    caret-color: transparent;
+}
 .resume .container .content{
   width: 100%;
 }
@@ -986,9 +995,10 @@ main section {
 }
 
 
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
+/*--------# Services Section----------*/
+#services{
+  caret-color: transparent;
+}
 .services .container .content{
   width: 100%;
 }
@@ -1116,6 +1126,9 @@ main section {
 }
 
 /*-------# Portfolio--------*/
+#portfolio{
+  caret-color: transparent;
+}
 .portfolio .container .content{
   width: 100%;
 }
@@ -1258,7 +1271,6 @@ main section {
   bottom: 0;
 }
 /*  */
-
 .portfolio-model{
   z-index: 999999;
   position: fixed;
@@ -1516,6 +1528,9 @@ main section {
 
 
 /*-------# Testimonials---------*/
+#testimonails{
+  caret-color: transparent;
+}
 .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
   overflow: hidden;
@@ -1598,10 +1613,11 @@ main section {
     padding-bottom: 100px;
 }
 .contact .container .content{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 50px;
+  caret-color: transparent;
 }
 .contact .align-items-stretch{
     width: 48%;
