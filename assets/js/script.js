@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Portfolio section - Modal
-const portfolioModals = document.querySelectorAll(".portfolio-modal");
+const portfolioModals = document.querySelectorAll(".portfolio-model");
 const imgCards = document.querySelectorAll(".img-card");
 const portfolioCloseBtns = document.querySelectorAll(".portfolio-close-btn");
 var portfolioModal = function(modalClick){
