@@ -1610,9 +1610,7 @@ main section {
 
 /*----# Contact-----*/
 .contact {
-    padding-bottom: 100px;
-}
-.contact .section-title, .contact-left, .contact-right .label {
+  padding-bottom: 100px;
   caret-color: transparent;
 }
 .contact .container .content{
